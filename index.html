@@ -1,453 +1,745 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zino Amazon | Smart Tech Guides & Recommendations</title>
+  <title>ZinoTech | Smart Tech Guides & Recommendations</title>
 
-<meta name="description" content="Zino Amazon provides practical guides, comparisons and tips for choosing useful technology and accessories.">
-<meta name="author" content="Zino Amazon">
+  <meta name="description"
+        content="Practical technology guides, comparisons and product recommendations for students and everyday users.">
 
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f7fb;
-    color:#172033;
-    line-height:1.7;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-/* HEADER */
-
-header{
-    background:#111827;
-    color:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 12px rgba(0,0,0,.12);
-}
-
-.nav{
-    min-height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.logo{
-    font-size:24px;
-    font-weight:800;
-    letter-spacing:-.5px;
-}
-
-.logo span{
-    color:#ff9900;
-}
-
-nav{
-    display:flex;
-    gap:22px;
-}
-
-nav a{
-    color:#e5e7eb;
-    font-size:15px;
-    font-weight:600;
-}
-
-nav a:hover{
-    color:#ff9900;
-}
-
-/* HERO */
-
-.hero{
-    background:linear-gradient(135deg,#111827,#24324a);
-    color:white;
-    padding:90px 0;
-}
-
-.hero-content{
-    max-width:760px;
-}
-
-.hero h1{
-    font-size:clamp(38px,6vw,64px);
-    line-height:1.08;
-    margin-bottom:22px;
-}
-
-.hero h1 span{
-    color:#ff9900;
-}
-
-.hero p{
-    font-size:19px;
-    color:#dbe3ef;
-    margin-bottom:30px;
-}
-
-.btn{
-    display:inline-block;
-    background:#ff9900;
-    color:#111827;
-    padding:13px 22px;
-    border-radius:8px;
-    font-weight:800;
-    border:none;
-    cursor:pointer;
-}
-
-.btn:hover{
-    opacity:.9;
-}
-
-/* SECTIONS */
-
-section{
-    padding:70px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title h2{
-    font-size:36px;
-    margin-bottom:10px;
-}
-
-.section-title p{
-    color:#667085;
-}
-
-/* FEATURE CARDS */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.card{
-    background:white;
-    border-radius:14px;
-    padding:26px;
-    box-shadow:0 5px 20px rgba(17,24,39,.07);
-    border:1px solid #e8ebf0;
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-}
-
-.card-number{
-    display:inline-flex;
-    width:38px;
-    height:38px;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#fff3df;
-    color:#c66f00;
-    font-weight:800;
-    margin-bottom:15px;
-}
-
-.card h3{
-    font-size:20px;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#667085;
-}
-
-.read-btn{
-    display:inline-block;
-    margin-top:18px;
-    color:#c66f00;
-    font-weight:800;
-}
-
-/* BLOG */
-
-.blog-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
-
-.article-card{
-    background:white;
-    border-radius:14px;
-    padding:28px;
-    border:1px solid #e8ebf0;
-    box-shadow:0 5px 20px rgba(17,24,39,.06);
-}
-
-.article-card .tag{
-    color:#c66f00;
-    font-size:13px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-}
-
-.article-card h3{
-    font-size:23px;
-    margin:8px 0 10px;
-}
-
-.article-card p{
-    color:#667085;
-}
-
-/* ARTICLES */
-
-.article{
-    max-width:850px;
-    margin:auto;
-    background:white;
-    padding:45px;
-    border-radius:16px;
-    box-shadow:0 5px 25px rgba(17,24,39,.06);
-    border:1px solid #e8ebf0;
-    margin-bottom:35px;
-}
-
-.article h2{
-    font-size:32px;
-    line-height:1.2;
-    margin-bottom:8px;
-}
-
-.article .date{
-    color:#8a94a6;
-    font-size:14px;
-    margin-bottom:25px;
-}
-
-.article h3{
-    font-size:22px;
-    margin:28px 0 10px;
-}
-
-.article p{
-    margin-bottom:17px;
-}
-
-.article ul{
-    padding-left:24px;
-    margin-bottom:20px;
-}
-
-.article li{
-    margin-bottom:8px;
-}
-
-.tip{
-    background:#fff8ec;
-    border-left:4px solid #ff9900;
-    padding:18px;
-    margin:25px 0;
-    border-radius:5px;
-}
-
-.disclosure{
-    background:#111827;
-    color:#dbe3ef;
-    padding:30px;
-    border-radius:12px;
-    font-size:14px;
-}
-
-/* ABOUT */
-
-.about{
-    max-width:800px;
-    margin:auto;
-    text-align:center;
-}
-
-.about p{
-    color:#667085;
-    margin-bottom:18px;
-}
-
-/* FOOTER */
-
-footer{
-    background:#111827;
-    color:#cbd5e1;
-    padding:45px 0;
-    text-align:center;
-}
-
-footer strong{
-    color:white;
-}
-
-footer p{
-    margin-top:8px;
-    font-size:14px;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-    nav{
-        gap:12px;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    nav a{
-        font-size:13px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .cards{
-        grid-template-columns:1fr;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.6;
     }
 
-    .blog-grid{
-        grid-template-columns:1fr;
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #101827;
+      color: white;
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 12px rgba(0,0,0,.15);
     }
 
-    .article{
-        padding:28px 20px;
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
     }
 
-    section{
-        padding:55px 0;
+    .logo span {
+      color: #ff9d00;
     }
 
-    .hero{
-        padding:65px 0;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 700;
     }
 
-    .hero p{
-        font-size:17px;
-    }
-}
-
-@media(max-width:520px){
-
-    .nav{
-        flex-direction:column;
-        padding:15px 0;
+    nav a:hover {
+      color: #ff9d00;
     }
 
-    nav{
-        flex-wrap:wrap;
-        justify-content:center;
+    /* HERO */
+
+    .hero {
+      background: #19263a;
+      color: white;
+      padding: 80px 7%;
+      min-height: 470px;
+      display: flex;
+      align-items: center;
     }
 
-    .hero h1{
-        font-size:39px;
+    .hero-content {
+      max-width: 800px;
     }
-}
-</style>
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #ff9d00;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #d8deea;
+      max-width: 720px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff9d00;
+      color: #111827;
+      padding: 15px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      margin-top: 22px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 70px 5%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #718096;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 42px;
+    }
+
+    /* COVER CARDS */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+      );
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 32px;
+      border: 1px solid #e7eaf0;
+      box-shadow: 0 7px 25px rgba(23,32,51,.06);
+    }
+
+    .number {
+      display: inline-flex;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: #fff1d8;
+      color: #c67800;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin: 15px 0 8px;
+    }
+
+    .card p {
+      color: #718096;
+    }
+
+    /* SHOP */
+
+    #shop {
+      background: #eef2f8;
+      max-width: none;
+    }
+
+    .shop-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+      );
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #e2e7ef;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 7px 25px rgba(23,32,51,.07);
+    }
+
+    /* EMPTY PRODUCT IMAGE SPACE */
+
+    .image-slot {
+      height: 220px;
+      background: #f3f5f8;
+      border-bottom: 1px dashed #cbd2dc;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      color: #8a94a5;
+      font-weight: 700;
+      padding: 20px;
+    }
+
+    .product-body {
+      padding: 24px;
+    }
+
+    .product h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .product p {
+      color: #718096;
+      min-height: 60px;
+    }
+
+    /* EMPTY AMAZON LINK SPACE */
+
+    .link-slot {
+      border: 1px dashed #c4ccd7;
+      border-radius: 9px;
+      padding: 12px;
+      color: #8a94a5;
+      font-size: 13px;
+      margin: 15px 0;
+      background: #fafbfc;
+    }
+
+    .amazon-btn {
+      display: block;
+      text-align: center;
+      background: #ff9d00;
+      color: #111827;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 12px;
+      border-radius: 9px;
+    }
+
+    /* NOTICE */
+
+    .note {
+      background: #fff8e9;
+      border-left: 4px solid #ff9d00;
+      padding: 18px 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    /* BLOG */
+
+    .blog-list {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(290px, 1fr)
+      );
+      gap: 24px;
+    }
+
+    .article-card {
+      background: white;
+      border-radius: 18px;
+      padding: 32px;
+      border: 1px solid #e7eaf0;
+      box-shadow: 0 7px 25px rgba(23,32,51,.06);
+    }
+
+    .tag {
+      color: #c67800;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .article-card h3 {
+      font-size: 24px;
+      margin: 12px 0;
+    }
+
+    .article-card p {
+      color: #718096;
+    }
+
+    .read {
+      display: inline-block;
+      margin-top: 15px;
+      color: #c67800;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    /* ARTICLES */
+
+    .article {
+      background: white;
+      border-radius: 18px;
+      padding: 40px;
+      margin: 30px auto;
+      max-width: 900px;
+      box-shadow: 0 7px 25px rgba(23,32,51,.06);
+    }
+
+    .article h2 {
+      font-size: 31px;
+      margin: 10px 0 15px;
+    }
+
+    .article p {
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #101827;
+      color: #d8deea;
+      text-align: center;
+      padding: 45px 5%;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 15px 4%;
+      }
+
+      nav a {
+        margin-left: 8px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 60px 6%;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .section-title {
+        font-size: 35px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-slot {
+        height: 210px;
+      }
+
+      .article {
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<div class="container nav">
-
-<a href="#home" class="logo">Zino<span>Amazon</span></a>
+<!-- NAVIGATION -->
 
 <nav>
-<a href="#home">Home</a>
-<a href="#blog">Blog</a>
-<a href="#about">About</a>
-<a href="#disclosure">Disclosure</a>
+
+  <div class="logo">
+    Zino<span>Tech</span>
+  </div>
+
+  <div>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#blog">Blog</a>
+    <a href="#about">About</a>
+  </div>
+
 </nav>
 
-</div>
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+
+  <div class="hero-content">
+
+    <h1>
+      Smarter choices for your
+      <span>tech life.</span>
+    </h1>
+
+    <p>
+      Practical guides, comparisons and buying tips
+      to help you understand technology before spending
+      your money.
+    </p>
+
+    <a class="btn" href="#shop">
+      Explore Products
+    </a>
+
+  </div>
+
 </header>
 
 
-<!-- HOME -->
+<!-- WHAT WE COVER -->
 
-<section class="hero" id="home">
+<section>
 
-<div class="container hero-content">
+  <h2 class="section-title">
+    What We Cover
+  </h2>
 
-<h1>Smarter choices for your <span>tech life.</span></h1>
+  <p class="section-sub">
+    Simple technology advice without unnecessary jargon.
+  </p>
 
-<p>
-Practical guides, comparisons and buying tips to help you understand technology
-before spending your money.
-</p>
+  <div class="cards">
 
-<a href="#blog" class="btn">Explore Our Guides</a>
+    <div class="card">
 
-</div>
+      <span class="number">01</span>
+
+      <h3>Buying Guides</h3>
+
+      <p>
+        Learn what actually matters when choosing
+        technology and accessories.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <span class="number">02</span>
+
+      <h3>Comparisons</h3>
+
+      <p>
+        Understand the practical differences between
+        common technology options.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <span class="number">03</span>
+
+      <h3>Student Tech</h3>
+
+      <p>
+        Discover practical technology ideas for
+        studying, productivity and everyday use.
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- FEATURED -->
+<!-- PRODUCT SHOP -->
 
-<section>
+<section id="shop">
 
-<div class="container">
+  <div class="shop-inner">
 
-<div class="section-title">
+    <h2 class="section-title">
+      Featured Products
+    </h2>
 
-<h2>What We Cover</h2>
+    <p class="section-sub">
+      Useful technology and accessories worth considering.
+    </p>
 
-<p>Simple technology advice without unnecessary jargon.</p>
 
-</div>
+    <div class="product-grid">
 
-<div class="cards">
 
-<div class="card">
-<div class="card-number">01</div>
-<h3>Buying Guides</h3>
-<p>Learn what actually matters when choosing technology and accessories.</p>
-</div>
+      <!-- PRODUCT 1 -->
 
-<div class="card">
-<div class="card-number">02</div>
-<h3>Comparisons</h3>
-<p>Understand the practical differences between common technology options.</p>
-</div>
+      <div class="product">
 
-<div class="card">
-<div class="card-number">03</div>
-<h3>Student Tech</h3>
-<p>Discover practical technology ideas for studying, productivity and everyday use.</p>
-</div>
+        <div class="image-slot">
+          EMPTY PRODUCT IMAGE SPACE
+          <br>
+          Paste product image here
+        </div>
 
-</div>
+        <div class="product-body">
 
-</div>
+          <h3>
+            Wireless Headphones
+          </h3>
+
+          <p>
+            Useful for study, calls, commuting
+            and entertainment.
+          </p>
+
+          <div class="link-slot">
+            PASTE AMAZON PRODUCT LINK HERE
+          </div>
+
+          <a
+            class="amazon-btn"
+            href="#"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 2 -->
+
+      <div class="product">
+
+        <div class="image-slot">
+          EMPTY PRODUCT IMAGE SPACE
+          <br>
+          Paste product image here
+        </div>
+
+        <div class="product-body">
+
+          <h3>
+            USB-C Hub
+          </h3>
+
+          <p>
+            Add useful ports to a laptop,
+            tablet or compatible device.
+          </p>
+
+          <div class="link-slot">
+            PASTE AMAZON PRODUCT LINK HERE
+          </div>
+
+          <a
+            class="amazon-btn"
+            href="#"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 3 -->
+
+      <div class="product">
+
+        <div class="image-slot">
+          EMPTY PRODUCT IMAGE SPACE
+          <br>
+          Paste product image here
+        </div>
+
+        <div class="product-body">
+
+          <h3>
+            Laptop Stand
+          </h3>
+
+          <p>
+            A simple desk accessory for
+            a comfortable workspace.
+          </p>
+
+          <div class="link-slot">
+            PASTE AMAZON PRODUCT LINK HERE
+          </div>
+
+          <a
+            class="amazon-btn"
+            href="#"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 4 -->
+
+      <div class="product">
+
+        <div class="image-slot">
+          EMPTY PRODUCT IMAGE SPACE
+          <br>
+          Paste product image here
+        </div>
+
+        <div class="product-body">
+
+          <h3>
+            Phone Charger
+          </h3>
+
+          <p>
+            Consider charging speed,
+            compatibility and port type.
+          </p>
+
+          <div class="link-slot">
+            PASTE AMAZON PRODUCT LINK HERE
+          </div>
+
+          <a
+            class="amazon-btn"
+            href="#"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 5 -->
+
+      <div class="product">
+
+        <div class="image-slot">
+          EMPTY PRODUCT IMAGE SPACE
+          <br>
+          Paste product image here
+        </div>
+
+        <div class="product-body">
+
+          <h3>
+            Wireless Mouse
+          </h3>
+
+          <p>
+            A practical accessory for laptops
+            and computer users.
+          </p>
+
+          <div class="link-slot">
+            PASTE AMAZON PRODUCT LINK HERE
+          </div>
+
+          <a
+            class="amazon-btn"
+            href="#"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PRODUCT 6 -->
+
+      <div class="product">
+
+        <div class="image-slot">
+          EMPTY PRODUCT IMAGE SPACE
+          <br>
+          Paste product image here
+        </div>
+
+        <div class="product-body">
+
+          <h3>
+            Bluetooth Speaker
+          </h3>
+
+          <p>
+            Compare size, battery life
+            and connectivity.
+          </p>
+
+          <div class="link-slot">
+            PASTE AMAZON PRODUCT LINK HERE
+          </div>
+
+          <a
+            class="amazon-btn"
+            href="#"
+          >
+            View on Amazon →
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="note">
+
+      <strong>Product links:</strong>
+
+      These spaces are intentionally empty.
+      Replace them with your proper Amazon
+      Associate product links after the account
+      is set up.
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -456,727 +748,443 @@ before spending your money.
 
 <section id="blog">
 
-<div class="container">
+  <h2 class="section-title">
+    Technology Guides
+  </h2>
 
-<div class="section-title">
-
-<h2>Technology Guides</h2>
-
-<p>Original guides designed to make technology easier to understand.</p>
-
-</div>
-
-
-<div class="blog-grid">
+  <p class="section-sub">
+    Original guides designed to make technology
+    easier to understand.
+  </p>
 
 
-<div class="article-card">
-<span class="tag">Buying Guide</span>
-<h3>Best Tech Accessories for Students</h3>
-<p>A practical look at accessories that can make studying and everyday computer use easier.</p>
-<a href="#article1" class="read-btn">Read article →</a>
-</div>
+  <div class="blog-list">
 
 
-<div class="article-card">
-<span class="tag">Audio</span>
-<h3>How to Choose Wireless Headphones</h3>
-<p>The important features to consider before choosing your next pair of wireless headphones.</p>
-<a href="#article2" class="read-btn">Read article →</a>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        BUYING GUIDE
+      </span>
+
+      <h3>
+        Best Tech Accessories for Students
+      </h3>
+
+      <p>
+        Practical accessories that can make
+        studying and everyday computer use easier.
+      </p>
+
+      <a class="read" href="#article1">
+        Read article →
+      </a>
+
+    </div>
 
 
-<div class="article-card">
-<span class="tag">USB-C</span>
-<h3>USB-C Hubs Explained</h3>
-<p>Understand what a USB-C hub does and which ports might actually be useful.</p>
-<a href="#article3" class="read-btn">Read article →</a>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        AUDIO
+      </span>
+
+      <h3>
+        How to Choose Wireless Headphones
+      </h3>
+
+      <p>
+        Important features to consider before
+        choosing your next pair.
+      </p>
+
+      <a class="read" href="#article2">
+        Read article →
+      </a>
+
+    </div>
 
 
-<div class="article-card">
-<span class="tag">Workspace</span>
-<h3>Useful Desk Accessories for Students</h3>
-<p>Simple workspace improvements that can make a study setup more convenient.</p>
-<a href="#article4" class="read-btn">Read article →</a>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        USB-C
+      </span>
+
+      <h3>
+        USB-C Hubs Explained
+      </h3>
+
+      <p>
+        Understand what a USB-C hub does and
+        which ports can be useful.
+      </p>
+
+      <a class="read" href="#article3">
+        Read article →
+      </a>
+
+    </div>
 
 
-<div class="article-card">
-<span class="tag">Audio</span>
-<h3>Wired vs Wireless Headphones</h3>
-<p>Compare convenience, connection, battery life and other everyday considerations.</p>
-<a href="#article5" class="read-btn">Read article →</a>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        AUDIO
+      </span>
+
+      <h3>
+        How to Choose a Bluetooth Speaker
+      </h3>
+
+      <p>
+        Understand size, battery life and
+        connectivity.
+      </p>
+
+      <a class="read" href="#article4">
+        Read article →
+      </a>
+
+    </div>
 
 
-<div class="article-card">
-<span class="tag">Charging</span>
-<h3>How to Choose a Phone Charger</h3>
-<p>Learn about charging speed, compatibility, ports and safety when buying a charger.</p>
-<a href="#article6" class="read-btn">Read article →</a>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        TECHNOLOGY
+      </span>
+
+      <h3>
+        Tech Accessories Worth Considering
+      </h3>
+
+      <p>
+        A practical look at accessories that
+        can solve everyday technology problems.
+      </p>
+
+      <a class="read" href="#article5">
+        Read article →
+      </a>
+
+    </div>
 
 
-<div class="article-card">
-<span class="tag">Laptops</span>
-<h3>What to Look for in a Laptop Stand</h3>
-<p>Learn which features matter when choosing a stand for studying or working.</p>
-<a href="#article7" class="read-btn">Read article →</a>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        DESK SETUP
+      </span>
+
+      <h3>
+        Useful Desk Accessories for Students
+      </h3>
+
+      <p>
+        Simple workspace improvements for
+        studying and working.
+      </p>
+
+      <a class="read" href="#article6">
+        Read article →
+      </a>
+
+    </div>
 
 
-<div class="article-card">
-<span class="tag">Study Setup</span>
-<h3>Useful Gadgets for a Study Setup</h3>
-<p>A practical checklist for building a comfortable and productive study space.</p>
-<a href="#article8" class="read-btn">Read article →</a>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        AUDIO
+      </span>
+
+      <h3>
+        Wired vs Wireless Headphones
+      </h3>
+
+      <p>
+        Compare convenience, connection,
+        battery life and everyday use.
+      </p>
+
+      <a class="read" href="#article7">
+        Read article →
+      </a>
+
+    </div>
 
 
-<div class="article-card">
-<span class="tag">Audio</span>
-<h3>How to Choose a Bluetooth Speaker</h3>
-<p>Understand size, battery life, connectivity and other useful speaker features.</p>
-<a href="#article9" class="read-btn">Read article →</a>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        CHARGING
+      </span>
+
+      <h3>
+        How to Choose a Phone Charger
+      </h3>
+
+      <p>
+        Learn about charging speed,
+        compatibility and ports.
+      </p>
+
+      <a class="read" href="#article8">
+        Read article →
+      </a>
+
+    </div>
 
 
-<div class="article-card">
-<span class="tag">Technology</span>
-<h3>Tech Accessories Worth Considering in 2026</h3>
-<p>A practical look at accessories that can solve everyday technology problems.</p>
-<a href="#article10" class="read-btn">Read article →</a>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        LAPTOPS
+      </span>
+
+      <h3>
+        What to Look for in a Laptop Stand
+      </h3>
+
+      <p>
+        Learn which features matter when
+        choosing a laptop stand.
+      </p>
+
+      <a class="read" href="#article9">
+        Read article →
+      </a>
+
+    </div>
 
 
-</div>
-</div>
+    <div class="article-card">
+
+      <span class="tag">
+        STUDY SETUP
+      </span>
+
+      <h3>
+        Useful Gadgets for a Study Setup
+      </h3>
+
+      <p>
+        Practical tools that can support
+        a useful study environment.
+      </p>
+
+      <a class="read" href="#article10">
+        Read article →
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- ARTICLE 1 -->
+<!-- ARTICLES -->
 
-<section id="article1">
+<section>
 
-<div class="container">
 
-<article class="article">
+  <div class="article" id="article1">
 
-<h2>Best Tech Accessories for Students</h2>
+    <span class="tag">
+      BUYING GUIDE
+    </span>
 
-<div class="date">Technology Guide • 2026</div>
+    <h2>
+      Best Tech Accessories for Students
+    </h2>
 
-<p>
-Students use technology for much more than entertainment. A phone can become a
-research tool, a laptop can become a classroom, and a pair of headphones can
-help create a quieter study environment.
-</p>
+    <p>
+      Students use technology for research,
+      classes, communication and entertainment.
+      The best accessory is usually the one that
+      solves a real problem.
+    </p>
 
-<p>
-The problem is that there are thousands of accessories available, and it is
-easy to spend money on things that look useful but rarely get used.
-</p>
+    <p>
+      Before buying an accessory, think about
+      what is inconvenient in your current setup.
+    </p>
 
-<h3>Start with the problem</h3>
+  </div>
 
-<p>
-Instead of asking “What gadget should I buy?”, start by asking “What problem am
-I trying to solve?” If your desk is uncomfortable, a laptop stand may help.
-If you regularly run out of ports, a USB-C hub may be more useful.
-</p>
 
-<h3>Useful categories</h3>
+  <div class="article" id="article2">
 
-<ul>
-<li>Headphones for focused listening and online classes.</li>
-<li>Charging accessories for keeping devices powered.</li>
-<li>USB hubs for connecting several peripherals.</li>
-<li>Laptop stands for improving desk positioning.</li>
-<li>External keyboards and mice for longer sessions.</li>
-<li>Simple desk lighting for evening study.</li>
-</ul>
+    <span class="tag">
+      AUDIO
+    </span>
 
-<div class="tip">
-<strong>Tip:</strong> Don't buy an accessory simply because it is popular.
-Choose one that solves a problem you actually have.
-</div>
+    <h2>
+      How to Choose Wireless Headphones
+    </h2>
 
-<p>
-The best student setup is not necessarily the most expensive one. A small
-number of useful accessories can be more valuable than a desk full of gadgets.
-</p>
+    <p>
+      Look at battery life, comfort, connection
+      stability, microphone quality and charging
+      options.
+    </p>
 
-</article>
+  </div>
 
-</div>
 
-</section>
+  <div class="article" id="article3">
 
+    <span class="tag">
+      USB-C
+    </span>
 
-<!-- ARTICLE 2 -->
+    <h2>
+      USB-C Hubs Explained
+    </h2>
 
-<section id="article2">
+    <p>
+      A USB-C hub can expand the number of ports
+      available on a compatible computer or tablet.
+      Check the exact ports and supported speeds.
+    </p>
 
-<div class="container">
+  </div>
 
-<article class="article">
 
-<h2>How to Choose Wireless Headphones</h2>
+  <div class="article" id="article4">
 
-<div class="date">Audio Guide • 2026</div>
+    <span class="tag">
+      AUDIO
+    </span>
 
-<p>
-Wireless headphones can be convenient for studying, commuting, gaming and
-general entertainment. But specifications can become confusing very quickly.
-</p>
+    <h2>
+      How to Choose a Bluetooth Speaker
+    </h2>
 
-<h3>Battery life</h3>
+    <p>
+      Consider portability, battery life,
+      Bluetooth connectivity and charging method.
+    </p>
 
-<p>
-Check both the headphone battery life and whether the charging case provides
-additional power. Longer battery life is useful if you spend several hours
-away from a charger.
-</p>
+  </div>
 
-<h3>Comfort</h3>
 
-<p>
-Comfort is highly personal. A technically impressive pair of headphones is not
-very useful if the shape becomes uncomfortable after a short session.
-</p>
+  <div class="article" id="article5">
 
-<h3>Connection</h3>
+    <span class="tag">
+      TECHNOLOGY
+    </span>
 
-<p>
-Look for a reliable Bluetooth connection and compatibility with the devices
-you already use. Some models also support wired connections, which can be
-useful in certain situations.
-</p>
+    <h2>
+      Tech Accessories Worth Considering
+    </h2>
 
-<h3>Noise cancellation</h3>
+    <p>
+      Useful accessories are those that improve
+      an existing workflow. Identify the problem
+      before buying another gadget.
+    </p>
 
-<p>
-Active noise cancellation can reduce certain surrounding sounds. It can be
-helpful in busy environments, but it should not be treated as a replacement
-for safe awareness of your surroundings.
-</p>
+  </div>
 
-<h3>Sound quality</h3>
 
-<p>
-Do not judge sound quality from one specification alone. Driver design,
-tuning, fit and software can all influence how headphones sound.
-</p>
+  <div class="article" id="article6">
 
-<div class="tip">
-<strong>Tip:</strong> Before buying, decide what matters most to you:
-comfort, battery life, sound, microphone quality, portability or noise
-cancellation.
-</div>
+    <span class="tag">
+      DESK SETUP
+    </span>
 
-</article>
+    <h2>
+      Useful Desk Accessories for Students
+    </h2>
 
-</div>
+    <p>
+      A good study setup does not need to be
+      expensive. Cable organization and comfortable
+      computer accessories can make a workspace
+      more practical.
+    </p>
 
-</section>
+  </div>
 
 
-<!-- ARTICLE 3 -->
+  <div class="article" id="article7">
 
-<section id="article3">
+    <span class="tag">
+      AUDIO
+    </span>
 
-<div class="container">
+    <h2>
+      Wired vs Wireless Headphones
+    </h2>
 
-<article class="article">
+    <p>
+      Wired headphones offer simple plug-and-play
+      use, while wireless models provide more
+      freedom of movement.
+    </p>
 
-<h2>USB-C Hubs Explained</h2>
+  </div>
 
-<div class="date">Computer Guide • 2026</div>
 
-<p>
-Modern laptops often have fewer physical ports than older computers. A USB-C
-hub can expand the number of devices you can connect through a single port.
-</p>
+  <div class="article" id="article8">
 
-<h3>What can a hub provide?</h3>
+    <span class="tag">
+      CHARGING
+    </span>
 
-<p>
-Depending on the model, a hub may include USB-A ports, USB-C ports, HDMI,
-Ethernet, SD card readers and other connections.
-</p>
+    <h2>
+      How to Choose a Phone Charger
+    </h2>
 
-<h3>Think about your actual devices</h3>
+    <p>
+      Check your phone's supported charging
+      standard, connector type and charger's
+      power rating.
+    </p>
 
-<p>
-A student who only needs a mouse and flash drive does not necessarily need an
-expensive hub with ten different ports. Someone connecting a monitor, storage
-device and other peripherals may need something more capable.
-</p>
+  </div>
 
-<h3>Power delivery</h3>
 
-<p>
-Some USB-C hubs support power delivery. This can allow a compatible charger to
-provide power to the laptop through the hub.
-</p>
+  <div class="article" id="article9">
 
-<h3>Display support</h3>
+    <span class="tag">
+      LAPTOPS
+    </span>
 
-<p>
-If you want to connect an external monitor, check the hub's display
-specifications and make sure they match your laptop and monitor.
-</p>
+    <h2>
+      What to Look for in a Laptop Stand
+    </h2>
 
-<div class="tip">
-<strong>Tip:</strong> Count the ports you actually need before shopping.
-More ports do not automatically mean better value.
-</div>
+    <p>
+      Look for stable construction, suitable
+      height adjustment, device compatibility
+      and a design that fits your desk.
+    </p>
 
-</article>
+  </div>
 
-</div>
 
-</section>
+  <div class="article" id="article10">
 
+    <span class="tag">
+      STUDY SETUP
+    </span>
 
-<!-- ARTICLE 4 -->
+    <h2>
+      Useful Gadgets for a Study Setup
+    </h2>
 
-<section id="article4">
+    <p>
+      Choose gadgets based on actual study needs.
+      A useful setup might include a comfortable
+      input device, suitable stand and reliable
+      charging.
+    </p>
 
-<div class="container">
-
-<article class="article">
-
-<h2>Useful Desk Accessories for Students</h2>
-
-<div class="date">Workspace Guide • 2026</div>
-
-<p>
-A study desk does not need to look like a professional recording studio.
-Simple accessories can make a workspace easier to use.
-</p>
-
-<h3>Laptop stand</h3>
-
-<p>
-A stand can raise a laptop and help create a more comfortable screen position.
-If you type for long periods, you may want an external keyboard and mouse as
-well.
-</p>
-
-<h3>Desk organizer</h3>
-
-<p>
-Small items such as cables, pens and chargers can quickly make a desk messy.
-An inexpensive organizer can keep frequently used items together.
-</p>
-
-<h3>Lighting</h3>
-
-<p>
-Good general lighting can make evening study more comfortable. Choose lighting
-that lets you clearly see your workspace without creating distracting glare.
-</p>
-
-<h3>Cable management</h3>
-
-<p>
-Cable clips or simple cable ties can stop charging cables and peripheral wires
-from becoming tangled.
-</p>
-
-<h3>Keep it practical</h3>
-
-<p>
-A clean desk is useful, but buying ten accessories to organize a desk that
-only contains three things defeats the purpose.
-</p>
-
-<div class="tip">
-<strong>Tip:</strong> Improve your workspace one problem at a time instead of
-buying everything at once.
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- ARTICLE 5 -->
-
-<section id="article5">
-
-<div class="container">
-
-<article class="article">
-
-<h2>Wired vs Wireless Headphones</h2>
-
-<div class="date">Audio Comparison • 2026</div>
-
-<p>
-Wired and wireless headphones both have legitimate advantages. The right choice
-depends on how and where you plan to use them.
-</p>
-
-<h3>Wireless advantages</h3>
-
-<ul>
-<li>No cable running between your headphones and device.</li>
-<li>Convenient for moving around.</li>
-<li>Many models include useful controls.</li>
-<li>Some offer active noise cancellation.</li>
-</ul>
-
-<h3>Wireless considerations</h3>
-
-<p>
-Wireless headphones need battery power. Bluetooth performance can also depend
-on the device and environment.
-</p>
-
-<h3>Wired advantages</h3>
-
-<ul>
-<li>No headphone battery is required.</li>
-<li>Simple plug-and-play use with compatible devices.</li>
-<li>Often available at lower prices.</li>
-<li>Useful for devices and situations where Bluetooth is inconvenient.</li>
-</ul>
-
-<h3>Which should you choose?</h3>
-
-<p>
-If convenience and freedom from cables are important, wireless may make sense.
-If simplicity and avoiding battery charging matter more, wired headphones can
-be attractive.
-</p>
-
-<div class="tip">
-<strong>Tip:</strong> Choose based on your daily routine rather than assuming
-one type is universally better.
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- ARTICLE 6 -->
-
-<section id="article6">
-
-<div class="container">
-
-<article class="article">
-
-<h2>How to Choose a Phone Charger</h2>
-
-<div class="date">Charging Guide • 2026</div>
-
-<p>
-A phone charger may look like a simple purchase, but compatibility matters.
-The charger, cable and phone all need to work together correctly.
-</p>
-
-<h3>Check the connector</h3>
-
-<p>
-First determine whether your device uses USB-C, Lightning or another connector.
-The cable needs to match both the phone and the charger.
-</p>
-
-<h3>Charging speed</h3>
-
-<p>
-A charger with a higher maximum power rating does not automatically mean your
-phone will charge at that speed. The phone itself has a maximum supported
-charging rate.
-</p>
-
-<h3>Quality matters</h3>
-
-<p>
-Choose chargers from reputable manufacturers and avoid suspiciously cheap
-products with unclear specifications.
-</p>
-
-<h3>One charger, several devices</h3>
-
-<p>
-If you own several compatible devices, a multi-port charger can sometimes
-reduce the number of adapters you need to carry.
-</p>
-
-<div class="tip">
-<strong>Tip:</strong> Check your device manufacturer's recommended charging
-specifications before buying.
-</div>
-
-<p>
-A charger should be selected for compatibility and reliability first, rather
-than simply choosing the highest number printed on the box.
-</p>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- ARTICLE 7 -->
-
-<section id="article7">
-
-<div class="container">
-
-<article class="article">
-
-<h2>What to Look for in a Laptop Stand</h2>
-
-<div class="date">Laptop Guide • 2026</div>
-
-<p>
-A laptop stand can change the position of your screen and free some space on
-your desk. It can be particularly useful when a laptop is used at a desk for
-long periods.
-</p>
-
-<h3>Adjustability</h3>
-
-<p>
-Some stands have a fixed height while others allow you to change the angle or
-height. Adjustable designs can provide more flexibility.
-</p>
-
-<h3>Stability</h3>
-
-<p>
-A stand should support the laptop securely without excessive movement. Check
-the stand's stated weight capacity and dimensions.
-</p>
-
-<h3>Portability</h3>
-
-<p>
-If you regularly move between school, home and other locations, a lightweight
-foldable stand may be more convenient.
-</p>
-
-<h3>Ventilation</h3>
-
-<p>
-Many stands leave space underneath the laptop, which can improve airflow around
-the computer compared with placing it directly on some surfaces.
-</p>
-
-<div class="tip">
-<strong>Tip:</strong> Measure your laptop and check the stand's dimensions
-before buying.
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- ARTICLE 8 -->
-
-<section id="article8">
-
-<div class="container">
-
-<article class="article">
-
-<h2>Useful Gadgets for a Study Setup</h2>
-
-<div class="date">Student Tech • 2026</div>
-
-<p>
-Building a study setup does not require expensive equipment. Start with the
-things that make studying difficult and solve those problems one by one.
-</p>
-
-<h3>Start with the essentials</h3>
-
-<p>
-A reliable computer or phone, appropriate lighting and a comfortable place to
-work are more important than decorative gadgets.
-</p>
-
-<h3>Useful additions</h3>
-
-<ul>
-<li>Headphones for online lessons and focused audio.</li>
-<li>Laptop stand for screen positioning.</li>
-<li>External mouse for comfortable navigation.</li>
-<li>USB hub when more ports are needed.</li>
-<li>Desk organizer for small accessories.</li>
-<li>Power adapter suitable for your devices.</li>
-</ul>
-
-<h3>Avoid unnecessary upgrades</h3>
-
-<p>
-Technology marketing can make every new accessory seem essential. Before
-buying something, ask whether it solves a problem you regularly experience.
-</p>
-
-<div class="tip">
-<strong>Simple rule:</strong> If you cannot explain what problem a gadget
-solves, you probably don't need it yet.
-</div>
-
-<p>
-A useful study setup should support your work rather than become another thing
-you constantly have to manage.
-</p>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- ARTICLE 9 -->
-
-<section id="article9">
-
-<div class="container">
-
-<article class="article">
-
-<h2>How to Choose a Bluetooth Speaker</h2>
-
-<div class="date">Audio Guide • 2026</div>
-
-<p>
-Bluetooth speakers range from tiny portable models to larger speakers designed
-for rooms. The best choice depends heavily on where you plan to use yours.
-</p>
-
-<h3>Size</h3>
-
-<p>
-Smaller speakers are easier to carry. Larger speakers may have more room for
-larger drivers and batteries.
-</p>
-
-<h3>Battery life</h3>
-
-<p>
-If portability matters, check the manufacturer's stated battery life and
-consider how often you will be away from a charger.
-</p>
-
-<h3>Connectivity</h3>
-
-<p>
-Bluetooth is the main connection method for many portable speakers. Some models
-also offer wired inputs or the ability to connect multiple speakers.
-</p>
-
-<h3>Water resistance</h3>
-
-<p>
-If you plan to use a speaker outdoors, check its stated protection rating
-rather than assuming every portable speaker is waterproof.
-</p>
-
-<h3>Sound expectations</h3>
-
-<p>
-A small portable speaker cannot always produce the same room-filling sound as
-a much larger model. Think about the environment where you will use it.
-</p>
-
-<div class="tip">
-<strong>Tip:</strong> Decide where you will use the speaker most often before
-choosing its size.
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- ARTICLE 10 -->
-
-<section id="article10">
-
-<div class="container">
-
-<article class="article">
-
-<h2>Tech Accessories Worth Considering in 2026</h2>
-
-<div class="date">Technology Guide • 2026</div>
-
-<p>
-Technology accessories are most useful when they solve small problems that
-appear repeatedly in everyday life.
-</p>
-
-<h3>USB-C accessories</h3>
-
-<p>
-USB-C has become common across many modern devices, making compatible cables,
-hubs and chargers useful for people who use several pieces of technology.
-</p>
-
-<h3>Portable power</h3>
-
-<p>
-A suitable power bank can be useful when you spend long periods away from a
-wall outlet. Check capacity and compatibility before buying.
-</p>
-
-<h3>Computer accessories</h3>
-
-<p>
-A good mouse, keyboard or laptop stand can improve the experience of using a
-computer for extended periods.
-</p>
-
-<h3>Audio accessories</h3>
-
-<p>
-Headphones and portable speakers can be useful for study, entertainment and
-online communication.
-</p>
-
-<h3>Organization</h3>
-
-<p>
-Cable organizers, device stands and storage accessories may not look exciting,
-but they can reduce everyday friction.
-</p>
-
-<div class="tip">
-<strong>Our approach:</strong> Don't chase every new gadget. Look for
-accessories that provide a clear benefit and fit the devices you already own.
-</div>
-
-<p>
-The most useful technology purchase is often the one that quietly solves a
-problem you experience every day.
-</p>
-
-</article>
-
-</div>
+  </div>
 
 </section>
 
@@ -1185,74 +1193,47 @@ problem you experience every day.
 
 <section id="about">
 
-<div class="container">
+  <h2 class="section-title">
+    About ZinoTech
+  </h2>
 
-<div class="about">
-
-<div class="section-title">
-
-<h2>About Zino Amazon</h2>
-
-</div>
-
-<p>
-Zino Amazon is a technology-focused content site built to make everyday
-technology easier to understand.
-</p>
-
-<p>
-We create practical guides covering gadgets, computer accessories, audio
-products, study setups and other useful technology topics.
-</p>
-
-<p>
-Our goal is simple: explain what matters, highlight what to consider, and help
-readers make informed purchasing decisions.
-</p>
-
-</div>
-
-</div>
+  <p class="section-sub">
+    ZinoTech creates practical technology guides,
+    comparisons and product-focused educational
+    content to help readers understand their
+    options before buying.
+  </p>
 
 </section>
 
 
-<!-- DISCLOSURE -->
+<!-- AFFILIATE DISCLOSURE -->
 
 <section id="disclosure">
 
-<div class="container">
+  <h2 class="section-title">
+    Affiliate Disclosure
+  </h2>
 
-<div class="disclosure">
+  <p class="section-sub">
+    This website may contain affiliate links.
+    If you click an affiliate link and make a
+    qualifying purchase, the site may earn a
+    commission at no additional cost to you.
+  </p>
 
-<h2>Affiliate Disclosure</h2>
+  <div class="note">
 
-<br>
+    <strong>
+      Amazon Associate disclosure:
+    </strong>
 
-<p>
-Zino Amazon may participate in affiliate advertising programs designed to
-provide a means for sites to earn advertising fees by advertising and linking
-to products on participating retailers' websites.
-</p>
+    <br><br>
 
-<br>
+    As an Amazon Associate I earn from
+    qualifying purchases.
 
-<p>
-If we use affiliate links, we may receive a commission when a qualifying
-purchase is made through those links. This does not increase the price you pay.
-</p>
-
-<br>
-
-<p>
-Our content is intended to provide useful information and guidance. Product
-availability, specifications and prices can change, so readers should check
-the retailer's current product page before purchasing.
-</p>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
@@ -1261,17 +1242,17 @@ the retailer's current product page before purchasing.
 
 <footer>
 
-<div class="container">
+  <p>
+    © 2026 ZinoTech. All rights reserved.
+  </p>
 
-<p><strong>Zino Amazon</strong></p>
-
-<p>Your guide to smarter technology choices.</p>
-
-<p>© 2026 Zino Amazon. All rights reserved.</p>
-
-</div>
+  <p>
+    Technology guides, comparisons and
+    product recommendations.
+  </p>
 
 </footer>
 
+
 </body>
-  </html>
+    </html>
