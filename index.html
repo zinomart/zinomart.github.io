@@ -1,1258 +1,688 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ZinoTech | Smart Tech Guides & Recommendations</title>
-
-  <meta name="description"
-        content="Practical technology guides, comparisons and product recommendations for students and everyday users.">
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
-      line-height: 1.6;
-    }
-
-    /* NAVIGATION */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #101827;
-      color: white;
-      padding: 18px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 12px rgba(0,0,0,.15);
-    }
-
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-    }
-
-    .logo span {
-      color: #ff9d00;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 700;
-    }
-
-    nav a:hover {
-      color: #ff9d00;
-    }
-
-    /* HERO */
-
-    .hero {
-      background: #19263a;
-      color: white;
-      padding: 80px 7%;
-      min-height: 470px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-content {
-      max-width: 800px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 72px);
-      line-height: 1.05;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: #ff9d00;
-    }
-
-    .hero p {
-      font-size: 20px;
-      color: #d8deea;
-      max-width: 720px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #ff9d00;
-      color: #111827;
-      padding: 15px 24px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 800;
-      margin-top: 22px;
-    }
-
-    /* GENERAL SECTIONS */
-
-    section {
-      padding: 70px 5%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .section-sub {
-      text-align: center;
-      color: #718096;
-      font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 42px;
-    }
-
-    /* COVER CARDS */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(250px, 1fr)
-      );
-      gap: 22px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 18px;
-      padding: 32px;
-      border: 1px solid #e7eaf0;
-      box-shadow: 0 7px 25px rgba(23,32,51,.06);
-    }
-
-    .number {
-      display: inline-flex;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      background: #fff1d8;
-      color: #c67800;
-      font-weight: 800;
-    }
-
-    .card h3 {
-      font-size: 24px;
-      margin: 15px 0 8px;
-    }
-
-    .card p {
-      color: #718096;
-    }
-
-    /* SHOP */
-
-    #shop {
-      background: #eef2f8;
-      max-width: none;
-    }
-
-    .shop-inner {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(250px, 1fr)
-      );
-      gap: 25px;
-    }
-
-    .product {
-      background: white;
-      border: 1px solid #e2e7ef;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 7px 25px rgba(23,32,51,.07);
-    }
-
-    /* EMPTY PRODUCT IMAGE SPACE */
-
-    .image-slot {
-      height: 220px;
-      background: #f3f5f8;
-      border-bottom: 1px dashed #cbd2dc;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-      color: #8a94a5;
-      font-weight: 700;
-      padding: 20px;
-    }
-
-    .product-body {
-      padding: 24px;
-    }
-
-    .product h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    .product p {
-      color: #718096;
-      min-height: 60px;
-    }
-
-    /* EMPTY AMAZON LINK SPACE */
-
-    .link-slot {
-      border: 1px dashed #c4ccd7;
-      border-radius: 9px;
-      padding: 12px;
-      color: #8a94a5;
-      font-size: 13px;
-      margin: 15px 0;
-      background: #fafbfc;
-    }
-
-    .amazon-btn {
-      display: block;
-      text-align: center;
-      background: #ff9d00;
-      color: #111827;
-      text-decoration: none;
-      font-weight: 800;
-      padding: 12px;
-      border-radius: 9px;
-    }
-
-    /* NOTICE */
-
-    .note {
-      background: #fff8e9;
-      border-left: 4px solid #ff9d00;
-      padding: 18px 20px;
-      border-radius: 8px;
-      margin-top: 30px;
-    }
-
-    /* BLOG */
-
-    .blog-list {
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(290px, 1fr)
-      );
-      gap: 24px;
-    }
-
-    .article-card {
-      background: white;
-      border-radius: 18px;
-      padding: 32px;
-      border: 1px solid #e7eaf0;
-      box-shadow: 0 7px 25px rgba(23,32,51,.06);
-    }
-
-    .tag {
-      color: #c67800;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .article-card h3 {
-      font-size: 24px;
-      margin: 12px 0;
-    }
-
-    .article-card p {
-      color: #718096;
-    }
-
-    .read {
-      display: inline-block;
-      margin-top: 15px;
-      color: #c67800;
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    /* ARTICLES */
-
-    .article {
-      background: white;
-      border-radius: 18px;
-      padding: 40px;
-      margin: 30px auto;
-      max-width: 900px;
-      box-shadow: 0 7px 25px rgba(23,32,51,.06);
-    }
-
-    .article h2 {
-      font-size: 31px;
-      margin: 10px 0 15px;
-    }
-
-    .article p {
-      font-size: 17px;
-      margin-bottom: 15px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #101827;
-      color: #d8deea;
-      text-align: center;
-      padding: 45px 5%;
-    }
-
-    footer p {
-      margin: 6px 0;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 700px) {
-
-      nav {
-        padding: 15px 4%;
-      }
-
-      nav a {
-        margin-left: 8px;
-        font-size: 12px;
-      }
-
-      .hero {
-        padding: 60px 6%;
-      }
-
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-
-      .section-title {
-        font-size: 35px;
-      }
-
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .image-slot {
-        height: 210px;
-      }
-
-      .article {
-        padding: 25px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ZinoTech - technology guides, product information, comparisons and recommendations.">
+<title>ZinoTech | Smart Tech Picks & Guides</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#101827;
+  color:white;
+  padding:15px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#5eead4;
+}
+
+.navlinks{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  font-size:14px;
+}
+
+.navlinks a:hover{
+  color:#5eead4;
+}
+
+.hero{
+  padding:75px 6%;
+  background:linear-gradient(135deg,#101827,#1e3a5f);
+  color:white;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:clamp(38px,7vw,68px);
+  margin-bottom:12px;
+}
+
+.hero p{
+  max-width:650px;
+  margin:0 auto 25px;
+  color:#dbe5f2;
+}
+
+.btn{
+  display:inline-block;
+  background:#5eead4;
+  color:#08201d;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:700;
+}
+
+section{
+  padding:55px 6%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-title h2{
+  font-size:32px;
+  margin-bottom:7px;
+}
+
+.section-title p{
+  color:#657084;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.info-card,
+.product,
+.blog-card{
+  background:white;
+  border-radius:16px;
+  box-shadow:0 6px 25px rgba(16,24,39,.07);
+}
+
+.info-card{
+  padding:22px;
+}
+
+.info-card h3{
+  margin:8px 0;
+}
+
+.info-card p,
+.product p,
+.blog-card p{
+  color:#667085;
+  font-size:14px;
+}
+
+.icon{
+  font-size:32px;
+}
+
+.product{
+  padding:0;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.product-img{
+  width:100%;
+  height:220px;
+  object-fit:contain;
+  background:white;
+  padding:18px;
+}
+
+.product-body{
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.product h3{
+  font-size:19px;
+  margin-bottom:7px;
+}
+
+.product p{
+  margin-bottom:18px;
+}
+
+.product .btn{
+  margin-top:auto;
+  text-align:center;
+}
+
+.blog-card{
+  padding:22px;
+}
+
+.blog-card h3{
+  margin-bottom:8px;
+}
+
+.about{
+  background:#101827;
+  color:white;
+  max-width:none;
+}
+
+.about-inner{
+  max-width:1100px;
+  margin:auto;
+}
+
+.about p{
+  color:#cbd5e1;
+  margin-top:12px;
+}
+
+footer{
+  background:#080e18;
+  color:#aeb9c8;
+  text-align:center;
+  padding:28px 6%;
+  font-size:13px;
+}
+
+.disclosure{
+  margin-top:15px;
+}
+
+@media(max-width:650px){
+
+  nav{
+    align-items:flex-start;
+    gap:12px;
+    flex-direction:column;
+  }
+
+  .navlinks{
+    gap:12px;
+  }
+
+  .hero{
+    padding:55px 6%;
+  }
+
+  section{
+    padding:45px 5%;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-
 <nav>
 
-  <div class="logo">
-    Zino<span>Tech</span>
-  </div>
+<a class="logo" href="#home">
+Zino<span>Tech</span>
+</a>
 
-  <div>
-    <a href="#home">Home</a>
-    <a href="#shop">Shop</a>
-    <a href="#blog">Blog</a>
-    <a href="#about">About</a>
-  </div>
+<div class="navlinks">
+<a href="#home">Home</a>
+<a href="#shop">Shop</a>
+<a href="#guides">Guides</a>
+<a href="#about">About</a>
+<a href="#disclosure">Disclosure</a>
+</div>
 
 </nav>
 
 
-<!-- HERO -->
-
 <header class="hero" id="home">
 
-  <div class="hero-content">
+<h1>Smart Tech. Simple Choices.</h1>
 
-    <h1>
-      Smarter choices for your
-      <span>tech life.</span>
-    </h1>
+<p>
+ZinoTech helps you discover useful technology,
+understand your options, and find products worth checking out.
+</p>
 
-    <p>
-      Practical guides, comparisons and buying tips
-      to help you understand technology before spending
-      your money.
-    </p>
-
-    <a class="btn" href="#shop">
-      Explore Products
-    </a>
-
-  </div>
+<a class="btn" href="#shop">
+Explore Tech Picks
+</a>
 
 </header>
 
 
-<!-- WHAT WE COVER -->
-
 <section>
 
-  <h2 class="section-title">
-    What We Cover
-  </h2>
+<div class="section-title">
 
-  <p class="section-sub">
-    Simple technology advice without unnecessary jargon.
-  </p>
+<h2>What We Cover</h2>
 
-  <div class="cards">
+<p>
+Practical technology content for everyday users.
+</p>
 
-    <div class="card">
-
-      <span class="number">01</span>
-
-      <h3>Buying Guides</h3>
-
-      <p>
-        Learn what actually matters when choosing
-        technology and accessories.
-      </p>
-
-    </div>
+</div>
 
 
-    <div class="card">
+<div class="grid">
 
-      <span class="number">02</span>
+<div class="info-card">
 
-      <h3>Comparisons</h3>
+<div class="icon">💻</div>
 
-      <p>
-        Understand the practical differences between
-        common technology options.
-      </p>
+<h3>Laptops</h3>
 
-    </div>
+<p>
+Guides and tips for choosing laptops for school,
+coding and everyday work.
+</p>
+
+</div>
 
 
-    <div class="card">
+<div class="info-card">
 
-      <span class="number">03</span>
+<div class="icon">📱</div>
 
-      <h3>Student Tech</h3>
+<h3>Phones</h3>
 
-      <p>
-        Discover practical technology ideas for
-        studying, productivity and everyday use.
-      </p>
+<p>
+Helpful information about smartphones and useful
+mobile accessories.
+</p>
 
-    </div>
+</div>
 
-  </div>
+
+<div class="info-card">
+
+<div class="icon">🎧</div>
+
+<h3>Accessories</h3>
+
+<p>
+Discover headphones, chargers, hubs, stands,
+mice and other useful gear.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="icon">⚙️</div>
+
+<h3>Tech Guides</h3>
+
+<p>
+Simple explanations and buying tips without
+unnecessary technical jargon.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
-
-<!-- PRODUCT SHOP -->
 
 <section id="shop">
 
-  <div class="shop-inner">
+<div class="section-title">
 
-    <h2 class="section-title">
-      Featured Products
-    </h2>
+<h2>Featured Tech Picks</h2>
 
-    <p class="section-sub">
-      Useful technology and accessories worth considering.
-    </p>
+<p>
+Check the product details on the retailer's website before buying.
+</p>
 
+</div>
 
-    <div class="product-grid">
 
+<div class="grid">
 
-      <!-- PRODUCT 1 -->
 
-      <div class="product">
+<!-- HEADPHONES -->
 
-        <div class="image-slot">
-          EMPTY PRODUCT IMAGE SPACE
-          <br>
-          Paste product image here
-        </div>
+<article class="product">
 
-        <div class="product-body">
+<img
+class="product-img"
+src="images/headphones.jpg"
+alt="Wireless headphones"
+>
 
-          <h3>
-            Wireless Headphones
-          </h3>
+<div class="product-body">
 
-          <p>
-            Useful for study, calls, commuting
-            and entertainment.
-          </p>
+<h3>Wireless Headphones</h3>
 
-          <div class="link-slot">
-            PASTE AMAZON PRODUCT LINK HERE
-          </div>
+<p>
+Explore this wireless headphone option and check
+its current specifications and availability.
+</p>
 
-          <a
-            class="amazon-btn"
-            href="#"
-          >
-            View on Amazon →
-          </a>
+<a
+class="btn"
+target="_blank"
+rel="nofollow sponsored"
+href="https://www.amazon.com/dp/B0C3HCD34R?tag=zinomart-20"
+>
+View on Amazon →
+</a>
 
-        </div>
+</div>
 
-      </div>
+</article>
 
 
-      <!-- PRODUCT 2 -->
+<!-- USB HUB -->
 
-      <div class="product">
+<article class="product">
 
-        <div class="image-slot">
-          EMPTY PRODUCT IMAGE SPACE
-          <br>
-          Paste product image here
-        </div>
+<img
+class="product-img"
+src="images/usb-hub.jpg"
+alt="USB-C hub"
+>
 
-        <div class="product-body">
+<div class="product-body">
 
-          <h3>
-            USB-C Hub
-          </h3>
+<h3>USB-C Hub</h3>
 
-          <p>
-            Add useful ports to a laptop,
-            tablet or compatible device.
-          </p>
+<p>
+A compact accessory for expanding connectivity
+on compatible computers and devices.
+</p>
 
-          <div class="link-slot">
-            PASTE AMAZON PRODUCT LINK HERE
-          </div>
+<a
+class="btn"
+target="_blank"
+rel="nofollow sponsored"
+href="https://www.amazon.com/dp/B0BW2TLQ8S?tag=zinomart-20"
+>
+View on Amazon →
+</a>
 
-          <a
-            class="amazon-btn"
-            href="#"
-          >
-            View on Amazon →
-          </a>
+</div>
 
-        </div>
+</article>
 
-      </div>
 
+<!-- LAPTOP STAND -->
 
-      <!-- PRODUCT 3 -->
+<article class="product">
 
-      <div class="product">
+<img
+class="product-img"
+src="images/laptop-stand.jpg"
+alt="Adjustable laptop stand"
+>
 
-        <div class="image-slot">
-          EMPTY PRODUCT IMAGE SPACE
-          <br>
-          Paste product image here
-        </div>
+<div class="product-body">
 
-        <div class="product-body">
+<h3>Laptop Stand</h3>
 
-          <h3>
-            Laptop Stand
-          </h3>
+<p>
+An adjustable stand option for people who want
+to raise their laptop setup.
+</p>
 
-          <p>
-            A simple desk accessory for
-            a comfortable workspace.
-          </p>
+<a
+class="btn"
+target="_blank"
+rel="nofollow sponsored"
+href="https://www.amazon.com/dp/B077B9W343?tag=zinomart-20"
+>
+View on Amazon →
+</a>
 
-          <div class="link-slot">
-            PASTE AMAZON PRODUCT LINK HERE
-          </div>
+</div>
 
-          <a
-            class="amazon-btn"
-            href="#"
-          >
-            View on Amazon →
-          </a>
+</article>
 
-        </div>
 
-      </div>
+<!-- PHONE CHARGER -->
 
+<article class="product">
 
-      <!-- PRODUCT 4 -->
+<img
+class="product-img"
+src="images/charger.jpg"
+alt="Phone charger"
+>
 
-      <div class="product">
+<div class="product-body">
 
-        <div class="image-slot">
-          EMPTY PRODUCT IMAGE SPACE
-          <br>
-          Paste product image here
-        </div>
+<h3>Phone Charger</h3>
 
-        <div class="product-body">
+<p>
+Check the current specifications, compatibility
+and availability before purchasing.
+</p>
 
-          <h3>
-            Phone Charger
-          </h3>
+<a
+class="btn"
+target="_blank"
+rel="nofollow sponsored"
+href="https://www.amazon.com/dp/B0CNTH3F7P?tag=zinomart-20"
+>
+View on Amazon →
+</a>
 
-          <p>
-            Consider charging speed,
-            compatibility and port type.
-          </p>
+</div>
 
-          <div class="link-slot">
-            PASTE AMAZON PRODUCT LINK HERE
-          </div>
+</article>
 
-          <a
-            class="amazon-btn"
-            href="#"
-          >
-            View on Amazon →
-          </a>
 
-        </div>
+<!-- WIRELESS MOUSE -->
 
-      </div>
+<article class="product">
 
+<img
+class="product-img"
+src="images/mouse.jpg"
+alt="Wireless mouse"
+>
 
-      <!-- PRODUCT 5 -->
+<div class="product-body">
 
-      <div class="product">
+<h3>Wireless Mouse</h3>
 
-        <div class="image-slot">
-          EMPTY PRODUCT IMAGE SPACE
-          <br>
-          Paste product image here
-        </div>
+<p>
+A simple wireless mouse option for compatible
+computers and everyday tasks.
+</p>
 
-        <div class="product-body">
+<a
+class="btn"
+target="_blank"
+rel="nofollow sponsored"
+href="https://www.amazon.com/dp/B004YAVF8I?tag=zinomart-20"
+>
+View on Amazon →
+</a>
 
-          <h3>
-            Wireless Mouse
-          </h3>
+</div>
 
-          <p>
-            A practical accessory for laptops
-            and computer users.
-          </p>
+</article>
 
-          <div class="link-slot">
-            PASTE AMAZON PRODUCT LINK HERE
-          </div>
 
-          <a
-            class="amazon-btn"
-            href="#"
-          >
-            View on Amazon →
-          </a>
+<!-- BLUETOOTH SPEAKER -->
 
-        </div>
+<article class="product">
 
-      </div>
+<img
+class="product-img"
+src="images/speaker.jpg"
+alt="Bluetooth speaker"
+>
 
+<div class="product-body">
 
-      <!-- PRODUCT 6 -->
+<h3>Bluetooth Speaker</h3>
 
-      <div class="product">
+<p>
+Explore this portable speaker option and check
+the latest product details.
+</p>
 
-        <div class="image-slot">
-          EMPTY PRODUCT IMAGE SPACE
-          <br>
-          Paste product image here
-        </div>
+<a
+class="btn"
+target="_blank"
+rel="nofollow sponsored"
+href="https://www.amazon.com/dp/B0BRKPVZB4?tag=zinomart-20"
+>
+View on Amazon →
+</a>
 
-        <div class="product-body">
+</div>
 
-          <h3>
-            Bluetooth Speaker
-          </h3>
+</article>
 
-          <p>
-            Compare size, battery life
-            and connectivity.
-          </p>
 
-          <div class="link-slot">
-            PASTE AMAZON PRODUCT LINK HERE
-          </div>
-
-          <a
-            class="amazon-btn"
-            href="#"
-          >
-            View on Amazon →
-          </a>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-
-    <div class="note">
-
-      <strong>Product links:</strong>
-
-      These spaces are intentionally empty.
-      Replace them with your proper Amazon
-      Associate product links after the account
-      is set up.
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- BLOG -->
+<section id="guides">
 
-<section id="blog">
+<div class="section-title">
 
-  <h2 class="section-title">
-    Technology Guides
-  </h2>
+<h2>Tech Guides</h2>
 
-  <p class="section-sub">
-    Original guides designed to make technology
-    easier to understand.
-  </p>
+<p>
+Ideas for future ZinoTech articles.
+</p>
 
+</div>
 
-  <div class="blog-list">
 
+<div class="grid">
 
-    <div class="article-card">
 
-      <span class="tag">
-        BUYING GUIDE
-      </span>
+<div class="blog-card">
 
-      <h3>
-        Best Tech Accessories for Students
-      </h3>
+<h3>How to Choose a Laptop for Coding</h3>
 
-      <p>
-        Practical accessories that can make
-        studying and everyday computer use easier.
-      </p>
+<p>
+Learn which specifications matter when choosing
+a coding laptop.
+</p>
 
-      <a class="read" href="#article1">
-        Read article →
-      </a>
+</div>
 
-    </div>
 
+<div class="blog-card">
 
-    <div class="article-card">
+<h3>RAM vs Storage Explained</h3>
 
-      <span class="tag">
-        AUDIO
-      </span>
+<p>
+Understand the difference between memory and
+storage in simple terms.
+</p>
 
-      <h3>
-        How to Choose Wireless Headphones
-      </h3>
+</div>
 
-      <p>
-        Important features to consider before
-        choosing your next pair.
-      </p>
 
-      <a class="read" href="#article2">
-        Read article →
-      </a>
+<div class="blog-card">
 
-    </div>
+<h3>What Is a USB-C Hub?</h3>
 
+<p>
+Understand what hubs do and when they can be useful.
+</p>
 
-    <div class="article-card">
+</div>
 
-      <span class="tag">
-        USB-C
-      </span>
 
-      <h3>
-        USB-C Hubs Explained
-      </h3>
+<div class="blog-card">
 
-      <p>
-        Understand what a USB-C hub does and
-        which ports can be useful.
-      </p>
+<h3>How to Choose Phone Accessories</h3>
 
-      <a class="read" href="#article3">
-        Read article →
-      </a>
+<p>
+Important things to check before buying mobile
+accessories.
+</p>
 
-    </div>
+</div>
 
 
-    <div class="article-card">
-
-      <span class="tag">
-        AUDIO
-      </span>
-
-      <h3>
-        How to Choose a Bluetooth Speaker
-      </h3>
-
-      <p>
-        Understand size, battery life and
-        connectivity.
-      </p>
-
-      <a class="read" href="#article4">
-        Read article →
-      </a>
-
-    </div>
-
-
-    <div class="article-card">
-
-      <span class="tag">
-        TECHNOLOGY
-      </span>
-
-      <h3>
-        Tech Accessories Worth Considering
-      </h3>
-
-      <p>
-        A practical look at accessories that
-        can solve everyday technology problems.
-      </p>
-
-      <a class="read" href="#article5">
-        Read article →
-      </a>
-
-    </div>
-
-
-    <div class="article-card">
-
-      <span class="tag">
-        DESK SETUP
-      </span>
-
-      <h3>
-        Useful Desk Accessories for Students
-      </h3>
-
-      <p>
-        Simple workspace improvements for
-        studying and working.
-      </p>
-
-      <a class="read" href="#article6">
-        Read article →
-      </a>
-
-    </div>
-
-
-    <div class="article-card">
-
-      <span class="tag">
-        AUDIO
-      </span>
-
-      <h3>
-        Wired vs Wireless Headphones
-      </h3>
-
-      <p>
-        Compare convenience, connection,
-        battery life and everyday use.
-      </p>
-
-      <a class="read" href="#article7">
-        Read article →
-      </a>
-
-    </div>
-
-
-    <div class="article-card">
-
-      <span class="tag">
-        CHARGING
-      </span>
-
-      <h3>
-        How to Choose a Phone Charger
-      </h3>
-
-      <p>
-        Learn about charging speed,
-        compatibility and ports.
-      </p>
-
-      <a class="read" href="#article8">
-        Read article →
-      </a>
-
-    </div>
-
-
-    <div class="article-card">
-
-      <span class="tag">
-        LAPTOPS
-      </span>
-
-      <h3>
-        What to Look for in a Laptop Stand
-      </h3>
-
-      <p>
-        Learn which features matter when
-        choosing a laptop stand.
-      </p>
-
-      <a class="read" href="#article9">
-        Read article →
-      </a>
-
-    </div>
-
-
-    <div class="article-card">
-
-      <span class="tag">
-        STUDY SETUP
-      </span>
-
-      <h3>
-        Useful Gadgets for a Study Setup
-      </h3>
-
-      <p>
-        Practical tools that can support
-        a useful study environment.
-      </p>
-
-      <a class="read" href="#article10">
-        Read article →
-      </a>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ARTICLES -->
+<section class="about" id="about">
 
-<section>
+<div class="about-inner">
 
+<h2>About ZinoTech</h2>
 
-  <div class="article" id="article1">
+<p>
+ZinoTech is a technology-focused website sharing
+product information, practical guides, comparisons
+and recommendations for people interested in
+consumer technology.
+</p>
 
-    <span class="tag">
-      BUYING GUIDE
-    </span>
-
-    <h2>
-      Best Tech Accessories for Students
-    </h2>
-
-    <p>
-      Students use technology for research,
-      classes, communication and entertainment.
-      The best accessory is usually the one that
-      solves a real problem.
-    </p>
-
-    <p>
-      Before buying an accessory, think about
-      what is inconvenient in your current setup.
-    </p>
-
-  </div>
-
-
-  <div class="article" id="article2">
-
-    <span class="tag">
-      AUDIO
-    </span>
-
-    <h2>
-      How to Choose Wireless Headphones
-    </h2>
-
-    <p>
-      Look at battery life, comfort, connection
-      stability, microphone quality and charging
-      options.
-    </p>
-
-  </div>
-
-
-  <div class="article" id="article3">
-
-    <span class="tag">
-      USB-C
-    </span>
-
-    <h2>
-      USB-C Hubs Explained
-    </h2>
-
-    <p>
-      A USB-C hub can expand the number of ports
-      available on a compatible computer or tablet.
-      Check the exact ports and supported speeds.
-    </p>
-
-  </div>
-
-
-  <div class="article" id="article4">
-
-    <span class="tag">
-      AUDIO
-    </span>
-
-    <h2>
-      How to Choose a Bluetooth Speaker
-    </h2>
-
-    <p>
-      Consider portability, battery life,
-      Bluetooth connectivity and charging method.
-    </p>
-
-  </div>
-
-
-  <div class="article" id="article5">
-
-    <span class="tag">
-      TECHNOLOGY
-    </span>
-
-    <h2>
-      Tech Accessories Worth Considering
-    </h2>
-
-    <p>
-      Useful accessories are those that improve
-      an existing workflow. Identify the problem
-      before buying another gadget.
-    </p>
-
-  </div>
-
-
-  <div class="article" id="article6">
-
-    <span class="tag">
-      DESK SETUP
-    </span>
-
-    <h2>
-      Useful Desk Accessories for Students
-    </h2>
-
-    <p>
-      A good study setup does not need to be
-      expensive. Cable organization and comfortable
-      computer accessories can make a workspace
-      more practical.
-    </p>
-
-  </div>
-
-
-  <div class="article" id="article7">
-
-    <span class="tag">
-      AUDIO
-    </span>
-
-    <h2>
-      Wired vs Wireless Headphones
-    </h2>
-
-    <p>
-      Wired headphones offer simple plug-and-play
-      use, while wireless models provide more
-      freedom of movement.
-    </p>
-
-  </div>
-
-
-  <div class="article" id="article8">
-
-    <span class="tag">
-      CHARGING
-    </span>
-
-    <h2>
-      How to Choose a Phone Charger
-    </h2>
-
-    <p>
-      Check your phone's supported charging
-      standard, connector type and charger's
-      power rating.
-    </p>
-
-  </div>
-
-
-  <div class="article" id="article9">
-
-    <span class="tag">
-      LAPTOPS
-    </span>
-
-    <h2>
-      What to Look for in a Laptop Stand
-    </h2>
-
-    <p>
-      Look for stable construction, suitable
-      height adjustment, device compatibility
-      and a design that fits your desk.
-    </p>
-
-  </div>
-
-
-  <div class="article" id="article10">
-
-    <span class="tag">
-      STUDY SETUP
-    </span>
-
-    <h2>
-      Useful Gadgets for a Study Setup
-    </h2>
-
-    <p>
-      Choose gadgets based on actual study needs.
-      A useful setup might include a comfortable
-      input device, suitable stand and reliable
-      charging.
-    </p>
-
-  </div>
+</div>
 
 </section>
 
-
-<!-- ABOUT -->
-
-<section id="about">
-
-  <h2 class="section-title">
-    About ZinoTech
-  </h2>
-
-  <p class="section-sub">
-    ZinoTech creates practical technology guides,
-    comparisons and product-focused educational
-    content to help readers understand their
-    options before buying.
-  </p>
-
-</section>
-
-
-<!-- AFFILIATE DISCLOSURE -->
 
 <section id="disclosure">
 
-  <h2 class="section-title">
-    Affiliate Disclosure
-  </h2>
+<div class="section-title">
 
-  <p class="section-sub">
-    This website may contain affiliate links.
-    If you click an affiliate link and make a
-    qualifying purchase, the site may earn a
-    commission at no additional cost to you.
-  </p>
+<h2>Affiliate Disclosure</h2>
 
-  <div class="note">
+</div>
 
-    <strong>
-      Amazon Associate disclosure:
-    </strong>
-
-    <br><br>
-
-    As an Amazon Associate I earn from
-    qualifying purchases.
-
-  </div>
+<p>
+ZinoTech may earn a commission when visitors
+purchase products through qualifying affiliate links
+on this website. This does not add an extra cost
+to the customer. Product availability, specifications
+and prices can change, so always check the retailer's
+website for the latest information.
+</p>
 
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-  <p>
-    © 2026 ZinoTech. All rights reserved.
-  </p>
+<p>
+© 2026 ZinoTech. All rights reserved.
+</p>
 
-  <p>
-    Technology guides, comparisons and
-    product recommendations.
-  </p>
+<p class="disclosure">
+ZinoTech participates in affiliate marketing programs.
+Links marked for retailers may be affiliate links.
+</p>
 
 </footer>
 
-
 </body>
-    </html>
+</html>
