@@ -1,236 +1,255 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ZinoTech - technology guides, product information, comparisons and recommendations.">
-<title>ZinoTech | Smart Tech Picks & Guides</title>
+
+<meta name="description" content="ZinoMart - technology products, practical buying guides, and useful recommendations.">
+
+<title>ZinoMart | Smart Tech Picks & Guides</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f5f7fb;
-  color:#172033;
-  line-height:1.6;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+  line-height: 1.6;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-nav{
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:#101827;
-  color:white;
-  padding:15px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #101827;
+  color: white;
+  padding: 15px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo{
-  font-size:24px;
-  font-weight:800;
+.logo {
+  font-size: 24px;
+  font-weight: 800;
 }
 
-.logo span{
-  color:#5eead4;
+.logo span {
+  color: #5eead4;
 }
 
-.navlinks{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  font-size:14px;
+.navlinks {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 14px;
 }
 
-.navlinks a:hover{
-  color:#5eead4;
+.navlinks a:hover {
+  color: #5eead4;
 }
 
-.hero{
-  padding:75px 6%;
-  background:linear-gradient(135deg,#101827,#1e3a5f);
-  color:white;
-  text-align:center;
+.hero {
+  padding: 75px 6%;
+  background: linear-gradient(135deg, #101827, #1e3a5f);
+  color: white;
+  text-align: center;
 }
 
-.hero h1{
-  font-size:clamp(38px,7vw,68px);
-  margin-bottom:12px;
+.hero h1 {
+  font-size: clamp(38px, 7vw, 68px);
+  margin-bottom: 12px;
 }
 
-.hero p{
-  max-width:650px;
-  margin:0 auto 25px;
-  color:#dbe5f2;
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 25px;
+  color: #dbe5f2;
 }
 
-.btn{
-  display:inline-block;
-  background:#5eead4;
-  color:#08201d;
-  padding:12px 20px;
-  border-radius:10px;
-  font-weight:700;
+.btn {
+  display: inline-block;
+  background: #5eead4;
+  color: #08201d;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: transform .2s, background .2s;
 }
 
-section{
-  padding:55px 6%;
-  max-width:1200px;
-  margin:auto;
+.btn:hover {
+  transform: translateY(-2px);
+  background: #99f6e4;
 }
 
-.section-title{
-  text-align:center;
-  margin-bottom:30px;
+section {
+  padding: 55px 6%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.section-title h2{
-  font-size:32px;
-  margin-bottom:7px;
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.section-title p{
-  color:#657084;
+.section-title h2 {
+  font-size: 32px;
+  margin-bottom: 7px;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+.section-title p {
+  color: #657084;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
 .info-card,
 .product,
-.blog-card{
-  background:white;
-  border-radius:16px;
-  box-shadow:0 6px 25px rgba(16,24,39,.07);
+.blog-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(16,24,39,.07);
 }
 
-.info-card{
-  padding:22px;
+.info-card {
+  padding: 22px;
 }
 
-.info-card h3{
-  margin:8px 0;
+.info-card h3 {
+  margin: 8px 0;
 }
 
 .info-card p,
 .product p,
-.blog-card p{
-  color:#667085;
-  font-size:14px;
+.blog-card p {
+  color: #667085;
+  font-size: 14px;
 }
 
-.icon{
-  font-size:32px;
+.icon {
+  font-size: 32px;
 }
 
-.product{
-  padding:0;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
+.product {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s;
 }
 
-.product-img{
-  width:100%;
-  height:220px;
-  object-fit:contain;
-  background:white;
-  padding:18px;
+.product:hover {
+  transform: translateY(-4px);
 }
 
-.product-body{
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  flex:1;
+.product-art {
+  height: 220px;
+  background: linear-gradient(145deg, #e7f7f5, #f3f5fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
 }
 
-.product h3{
-  font-size:19px;
-  margin-bottom:7px;
+.product-art svg {
+  width: 100%;
+  height: 100%;
+  max-width: 240px;
 }
 
-.product p{
-  margin-bottom:18px;
+.product-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.product .btn{
-  margin-top:auto;
-  text-align:center;
+.product h3 {
+  font-size: 19px;
+  margin-bottom: 7px;
 }
 
-.blog-card{
-  padding:22px;
+.product p {
+  margin-bottom: 18px;
 }
 
-.blog-card h3{
-  margin-bottom:8px;
+.product .btn {
+  margin-top: auto;
+  text-align: center;
 }
 
-.about{
-  background:#101827;
-  color:white;
-  max-width:none;
+.blog-card {
+  padding: 22px;
 }
 
-.about-inner{
-  max-width:1100px;
-  margin:auto;
+.blog-card h3 {
+  margin-bottom: 8px;
 }
 
-.about p{
-  color:#cbd5e1;
-  margin-top:12px;
+.about {
+  background: #101827;
+  color: white;
+  max-width: none;
 }
 
-footer{
-  background:#080e18;
-  color:#aeb9c8;
-  text-align:center;
-  padding:28px 6%;
-  font-size:13px;
+.about-inner {
+  max-width: 1100px;
+  margin: auto;
 }
 
-.disclosure{
-  margin-top:15px;
+.about p {
+  color: #cbd5e1;
+  margin-top: 12px;
 }
 
-@media(max-width:650px){
+.disclosure {
+  margin-top: 15px;
+}
 
-  nav{
-    align-items:flex-start;
-    gap:12px;
-    flex-direction:column;
+footer {
+  background: #080e18;
+  color: #aeb9c8;
+  text-align: center;
+  padding: 28px 6%;
+  font-size: 13px;
+}
+
+@media(max-width:650px) {
+  nav {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
   }
 
-  .navlinks{
-    gap:12px;
+  .navlinks {
+    gap: 12px;
   }
 
-  .hero{
-    padding:55px 6%;
+  .hero {
+    padding: 55px 6%;
   }
 
-  section{
-    padding:45px 5%;
+  section {
+    padding: 45px 5%;
   }
 }
 </style>
@@ -239,450 +258,250 @@ footer{
 <body>
 
 <nav>
+  <a class="logo" href="#home">Zino<span>Mart</span></a>
 
-<a class="logo" href="#home">
-Zino<span>Tech</span>
-</a>
-
-<div class="navlinks">
-<a href="#home">Home</a>
-<a href="#shop">Shop</a>
-<a href="#guides">Guides</a>
-<a href="#about">About</a>
-<a href="#disclosure">Disclosure</a>
-</div>
-
+  <div class="navlinks">
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#guides">Guides</a>
+    <a href="#about">About</a>
+    <a href="#disclosure">Disclosure</a>
+  </div>
 </nav>
 
-
 <header class="hero" id="home">
-
-<h1>Smart Tech. Simple Choices.</h1>
-
-<p>
-ZinoTech helps you discover useful technology,
-understand your options, and find products worth checking out.
-</p>
-
-<a class="btn" href="#shop">
-Explore Tech Picks
-</a>
-
+  <h1>Smart Tech. Simple Choices.</h1>
+  <p>
+    ZinoMart helps you discover useful technology,
+    explore your options, and find products worth checking out.
+  </p>
+  <a class="btn" href="#shop">Explore Tech Picks</a>
 </header>
 
-
 <section>
+  <div class="section-title">
+    <h2>What We Cover</h2>
+    <p>Practical technology content for everyday users.</p>
+  </div>
 
-<div class="section-title">
+  <div class="grid">
+    <div class="info-card">
+      <div class="icon">💻</div>
+      <h3>Laptops</h3>
+      <p>Guides for choosing laptops for school, coding, and everyday work.</p>
+    </div>
 
-<h2>What We Cover</h2>
+    <div class="info-card">
+      <div class="icon">📱</div>
+      <h3>Phones</h3>
+      <p>Helpful information about smartphones and mobile accessories.</p>
+    </div>
 
-<p>
-Practical technology content for everyday users.
-</p>
+    <div class="info-card">
+      <div class="icon">🎧</div>
+      <h3>Accessories</h3>
+      <p>Explore headphones, chargers, hubs, stands, mice, and other gear.</p>
+    </div>
 
-</div>
-
-
-<div class="grid">
-
-<div class="info-card">
-
-<div class="icon">💻</div>
-
-<h3>Laptops</h3>
-
-<p>
-Guides and tips for choosing laptops for school,
-coding and everyday work.
-</p>
-
-</div>
-
-
-<div class="info-card">
-
-<div class="icon">📱</div>
-
-<h3>Phones</h3>
-
-<p>
-Helpful information about smartphones and useful
-mobile accessories.
-</p>
-
-</div>
-
-
-<div class="info-card">
-
-<div class="icon">🎧</div>
-
-<h3>Accessories</h3>
-
-<p>
-Discover headphones, chargers, hubs, stands,
-mice and other useful gear.
-</p>
-
-</div>
-
-
-<div class="info-card">
-
-<div class="icon">⚙️</div>
-
-<h3>Tech Guides</h3>
-
-<p>
-Simple explanations and buying tips without
-unnecessary technical jargon.
-</p>
-
-</div>
-
-</div>
-
+    <div class="info-card">
+      <div class="icon">⚙️</div>
+      <h3>Tech Guides</h3>
+      <p>Simple explanations and buying tips without unnecessary jargon.</p>
+    </div>
+  </div>
 </section>
-
 
 <section id="shop">
-
-<div class="section-title">
-
-<h2>Featured Tech Picks</h2>
-
-<p>
-Check the product details on the retailer's website before buying.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<!-- HEADPHONES -->
-
-<article class="product">
-
-<img
-class="product-img"
-src="images/headphones.jpg"
-alt="Wireless headphones"
->
-
-<div class="product-body">
-
-<h3>Wireless Headphones</h3>
-
-<p>
-Explore this wireless headphone option and check
-its current specifications and availability.
-</p>
-
-<a
-class="btn"
-target="_blank"
-rel="nofollow sponsored"
-href="https://www.amazon.com/dp/B0C3HCD34R?tag=zinomart-20"
->
-View on Amazon →
-</a>
-
-</div>
-
-</article>
-
-
-<!-- USB HUB -->
-
-<article class="product">
-
-<img
-class="product-img"
-src="images/usb-hub.jpg"
-alt="USB-C hub"
->
-
-<div class="product-body">
-
-<h3>USB-C Hub</h3>
-
-<p>
-A compact accessory for expanding connectivity
-on compatible computers and devices.
-</p>
-
-<a
-class="btn"
-target="_blank"
-rel="nofollow sponsored"
-href="https://www.amazon.com/dp/B0BW2TLQ8S?tag=zinomart-20"
->
-View on Amazon →
-</a>
-
-</div>
-
-</article>
-
-
-<!-- LAPTOP STAND -->
-
-<article class="product">
-
-<img
-class="product-img"
-src="images/laptop-stand.jpg"
-alt="Adjustable laptop stand"
->
-
-<div class="product-body">
-
-<h3>Laptop Stand</h3>
-
-<p>
-An adjustable stand option for people who want
-to raise their laptop setup.
-</p>
-
-<a
-class="btn"
-target="_blank"
-rel="nofollow sponsored"
-href="https://www.amazon.com/dp/B077B9W343?tag=zinomart-20"
->
-View on Amazon →
-</a>
-
-</div>
-
-</article>
-
-
-<!-- PHONE CHARGER -->
-
-<article class="product">
-
-<img
-class="product-img"
-src="images/charger.jpg"
-alt="Phone charger"
->
-
-<div class="product-body">
-
-<h3>Phone Charger</h3>
-
-<p>
-Check the current specifications, compatibility
-and availability before purchasing.
-</p>
-
-<a
-class="btn"
-target="_blank"
-rel="nofollow sponsored"
-href="https://www.amazon.com/dp/B0CNTH3F7P?tag=zinomart-20"
->
-View on Amazon →
-</a>
-
-</div>
-
-</article>
-
-
-<!-- WIRELESS MOUSE -->
-
-<article class="product">
-
-<img
-class="product-img"
-src="images/mouse.jpg"
-alt="Wireless mouse"
->
-
-<div class="product-body">
-
-<h3>Wireless Mouse</h3>
-
-<p>
-A simple wireless mouse option for compatible
-computers and everyday tasks.
-</p>
-
-<a
-class="btn"
-target="_blank"
-rel="nofollow sponsored"
-href="https://www.amazon.com/dp/B004YAVF8I?tag=zinomart-20"
->
-View on Amazon →
-</a>
-
-</div>
-
-</article>
-
-
-<!-- BLUETOOTH SPEAKER -->
-
-<article class="product">
-
-<img
-class="product-img"
-src="images/speaker.jpg"
-alt="Bluetooth speaker"
->
-
-<div class="product-body">
-
-<h3>Bluetooth Speaker</h3>
-
-<p>
-Explore this portable speaker option and check
-the latest product details.
-</p>
-
-<a
-class="btn"
-target="_blank"
-rel="nofollow sponsored"
-href="https://www.amazon.com/dp/B0BRKPVZB4?tag=zinomart-20"
->
-View on Amazon →
-</a>
-
-</div>
-
-</article>
-
-
-</div>
-
+  <div class="section-title">
+    <h2>Featured Tech Picks</h2>
+    <p>Explore the products and check the retailer's latest details.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- HEADPHONES -->
+    <article class="product">
+      <div class="product-art">
+        <svg viewBox="0 0 240 180" role="img" aria-label="Headphone illustration">
+          <path d="M48 100 V78 A72 72 0 0 1 192 78 V100"
+            fill="none" stroke="#25344d" stroke-width="18" stroke-linecap="round"/>
+          <rect x="34" y="87" width="43" height="65" rx="17" fill="#172033"/>
+          <rect x="163" y="87" width="43" height="65" rx="17" fill="#172033"/>
+          <rect x="44" y="99" width="23" height="41" rx="10" fill="#5eead4"/>
+          <rect x="173" y="99" width="23" height="41" rx="10" fill="#5eead4"/>
+        </svg>
+      </div>
+      <div class="product-body">
+        <h3>Soundcore Wireless Headphones</h3>
+        <p>Explore these headphones and check current specifications and availability.</p>
+        <a class="btn" href="https://a.co/d/0hDNy9jI"
+           target="_blank" rel="nofollow sponsored noopener">View on Amazon →</a>
+      </div>
+    </article>
+
+    <!-- USB HUB -->
+    <article class="product">
+      <div class="product-art">
+        <svg viewBox="0 0 240 180" role="img" aria-label="USB-C hub illustration">
+          <path d="M32 90 C54 90 52 55 77 55" fill="none" stroke="#64748b" stroke-width="8" stroke-linecap="round"/>
+          <rect x="75" y="38" width="125" height="88" rx="13" fill="#344256"/>
+          <rect x="91" y="53" width="26" height="13" rx="3" fill="#101827"/>
+          <rect x="125" y="53" width="26" height="13" rx="3" fill="#101827"/>
+          <rect x="159" y="53" width="26" height="13" rx="3" fill="#101827"/>
+          <rect x="94" y="83" width="88" height="8" rx="4" fill="#5eead4"/>
+          <circle cx="184" cy="108" r="4" fill="#5eead4"/>
+        </svg>
+      </div>
+      <div class="product-body">
+        <h3>UGREEN USB-C Hub</h3>
+        <p>A compact accessory for expanding connectivity on compatible devices.</p>
+        <a class="btn" href="https://a.co/d/0es8D0wQ"
+           target="_blank" rel="nofollow sponsored noopener">View on Amazon →</a>
+      </div>
+    </article>
+
+    <!-- LAPTOP STAND -->
+    <article class="product">
+      <div class="product-art">
+        <svg viewBox="0 0 240 180" role="img" aria-label="Laptop stand illustration">
+          <path d="M63 52 L178 52 L194 92 L78 92 Z" fill="#64748b"/>
+          <path d="M78 92 L194 92 L184 101 L69 101 Z" fill="#344256"/>
+          <path d="M91 103 L108 103 L88 147 L72 147 Z" fill="#25344d"/>
+          <path d="M165 103 L181 103 L198 147 L182 147 Z" fill="#25344d"/>
+          <rect x="54" y="147" width="150" height="8" rx="4" fill="#5eead4"/>
+        </svg>
+      </div>
+      <div class="product-body">
+        <h3>Nulaxy Laptop Stand</h3>
+        <p>An adjustable stand option for raising your laptop setup.</p>
+        <a class="btn" href="https://a.co/d/03ofpgJY"
+           target="_blank" rel="nofollow sponsored noopener">View on Amazon →</a>
+      </div>
+    </article>
+
+    <!-- PHONE CHARGER -->
+    <article class="product">
+      <div class="product-art">
+        <svg viewBox="0 0 240 180" role="img" aria-label="Wireless phone charger illustration">
+          <rect x="77" y="19" width="86" height="142" rx="18" fill="#25344d"/>
+          <rect x="84" y="28" width="72" height="124" rx="12" fill="#dce7f3"/>
+          <circle cx="120" cy="88" r="25" fill="none" stroke="#5eead4" stroke-width="6"/>
+          <circle cx="120" cy="88" r="13" fill="none" stroke="#5eead4" stroke-width="4"/>
+          <path d="M116 68 L108 91 H119 L114 108 L132 83 H120 L126 68 Z" fill="#25344d"/>
+        </svg>
+      </div>
+      <div class="product-body">
+        <h3>MagSafe Wireless Charger</h3>
+        <p>Check device compatibility and charging specifications before purchasing.</p>
+        <a class="btn" href="https://a.co/d/0h08IGCG"
+           target="_blank" rel="nofollow sponsored noopener">View on Amazon →</a>
+      </div>
+    </article>
+
+    <!-- WIRELESS MOUSE -->
+    <article class="product">
+      <div class="product-art">
+        <svg viewBox="0 0 240 180" role="img" aria-label="Wireless mouse illustration">
+          <path d="M120 26 C82 26 70 54 70 91 V114 C70 145 91 158 120 158 C149 158 170 145 170 114 V91 C170 54 158 26 120 26 Z"
+            fill="#25344d"/>
+          <path d="M120 29 V79" stroke="#5eead4" stroke-width="4"/>
+          <path d="M75 84 H165" stroke="#101827" stroke-width="3"/>
+          <rect x="113" y="43" width="14" height="25" rx="7" fill="#5eead4"/>
+        </svg>
+      </div>
+      <div class="product-body">
+        <h3>Logitech M185 Wireless Mouse</h3>
+        <p>A wireless mouse option for compatible computers and everyday tasks.</p>
+        <a class="btn" href="https://a.co/d/06Qbdbx7"
+           target="_blank" rel="nofollow sponsored noopener">View on Amazon →</a>
+      </div>
+    </article>
+
+    <!-- BLUETOOTH SPEAKER -->
+    <article class="product">
+      <div class="product-art">
+        <svg viewBox="0 0 240 180" role="img" aria-label="Bluetooth speaker illustration">
+          <rect x="50" y="36" width="140" height="108" rx="28" fill="#25344d"/>
+          <rect x="58" y="44" width="124" height="92" rx="22" fill="#344256"/>
+          <circle cx="94" cy="90" r="27" fill="#101827" stroke="#5eead4" stroke-width="4"/>
+          <circle cx="94" cy="90" r="12" fill="#5eead4"/>
+          <circle cx="148" cy="90" r="27" fill="#101827" stroke="#5eead4" stroke-width="4"/>
+          <circle cx="148" cy="90" r="12" fill="#5eead4"/>
+          <path d="M82 29 H158" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="product-body">
+        <h3>Bluetooth Speaker</h3>
+        <p>Explore this portable speaker option and check the latest product details.</p>
+        <a class="btn" href="https://a.co/d/0fjaMCao"
+           target="_blank" rel="nofollow sponsored noopener">View on Amazon →</a>
+      </div>
+    </article>
+
+  </div>
 </section>
-
 
 <section id="guides">
+  <div class="section-title">
+    <h2>Tech Guides</h2>
+    <p>Helpful topics for students and everyday tech users.</p>
+  </div>
 
-<div class="section-title">
+  <div class="grid">
+    <div class="blog-card">
+      <h3>How to Choose a Laptop for Coding</h3>
+      <p>Learn which specifications matter when choosing a coding laptop.</p>
+    </div>
 
-<h2>Tech Guides</h2>
+    <div class="blog-card">
+      <h3>RAM vs Storage Explained</h3>
+      <p>Understand the difference between memory and storage.</p>
+    </div>
 
-<p>
-Ideas for future ZinoTech articles.
-</p>
+    <div class="blog-card">
+      <h3>What Is a USB-C Hub?</h3>
+      <p>Understand what hubs do and when they can be useful.</p>
+    </div>
 
-</div>
-
-
-<div class="grid">
-
-
-<div class="blog-card">
-
-<h3>How to Choose a Laptop for Coding</h3>
-
-<p>
-Learn which specifications matter when choosing
-a coding laptop.
-</p>
-
-</div>
-
-
-<div class="blog-card">
-
-<h3>RAM vs Storage Explained</h3>
-
-<p>
-Understand the difference between memory and
-storage in simple terms.
-</p>
-
-</div>
-
-
-<div class="blog-card">
-
-<h3>What Is a USB-C Hub?</h3>
-
-<p>
-Understand what hubs do and when they can be useful.
-</p>
-
-</div>
-
-
-<div class="blog-card">
-
-<h3>How to Choose Phone Accessories</h3>
-
-<p>
-Important things to check before buying mobile
-accessories.
-</p>
-
-</div>
-
-
-</div>
-
+    <div class="blog-card">
+      <h3>How to Choose Phone Accessories</h3>
+      <p>Things to check before buying mobile accessories.</p>
+    </div>
+  </div>
 </section>
-
 
 <section class="about" id="about">
-
-<div class="about-inner">
-
-<h2>About ZinoTech</h2>
-
-<p>
-ZinoTech is a technology-focused website sharing
-product information, practical guides, comparisons
-and recommendations for people interested in
-consumer technology.
-</p>
-
-</div>
-
+  <div class="about-inner">
+    <h2>About ZinoMart</h2>
+    <p>
+      ZinoMart shares technology product information,
+      practical buying guides, comparisons, and recommendations
+      for people interested in consumer technology.
+    </p>
+  </div>
 </section>
-
 
 <section id="disclosure">
+  <div class="section-title">
+    <h2>Affiliate Disclosure</h2>
+  </div>
 
-<div class="section-title">
-
-<h2>Affiliate Disclosure</h2>
-
-</div>
-
-<p>
-ZinoTech may earn a commission when visitors
-purchase products through qualifying affiliate links
-on this website. This does not add an extra cost
-to the customer. Product availability, specifications
-and prices can change, so always check the retailer's
-website for the latest information.
-</p>
-
+  <p>
+    ZinoMart may earn commissions from qualifying purchases made
+    through affiliate links on this website. As an Amazon Associate
+    I earn from qualifying purchases. This does not add an extra
+    cost to the customer. Product availability, specifications,
+    and prices can change; check the retailer's website for current details.
+  </p>
 </section>
 
-
 <footer>
-
-<p>
-© 2026 ZinoTech. All rights reserved.
-</p>
-
-<p class="disclosure">
-ZinoTech participates in affiliate marketing programs.
-Links marked for retailers may be affiliate links.
-</p>
-
+  <p>© 2026 ZinoMart. All rights reserved.</p>
+  <p class="disclosure">
+    Some links on this website are affiliate links.
+  </p>
 </footer>
 
 </body>
 </html>
+
